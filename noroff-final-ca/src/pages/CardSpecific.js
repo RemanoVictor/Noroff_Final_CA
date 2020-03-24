@@ -12,7 +12,8 @@ export default function CardSpecific() {
   let { id } = useParams();
   useEffect(() => {
     axios.get(MAGIC_API + id).then(mtgData => {
-      setmtgCharacters(mtgData.data.cards);
+      console.log(mtgData);
+      setmtgCharacters(mtgData.data.card);
     });
   }, [id]);
   return (
@@ -23,9 +24,9 @@ export default function CardSpecific() {
           <Cardspecific
             id={mtgcharacters.id}
             name={mtgcharacters.name}
-            img={`${mtgcharacters.image}`}
-            location={mtgcharacters.location.name}
-            created={mtgcharacters.created}
+            img={`${mtgcharacters.imageUrl}`}
+            // location={mtgcharacters.location.name}
+            // created={mtgcharacters.created}
           />
         ) : (
           <div> No data </div>
