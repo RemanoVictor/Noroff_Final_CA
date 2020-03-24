@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-export default function Login() {
+export default function Login(props) {
   const [inputs, setInputs] = useState({
     username: "",
     password: ""
   });
-  const { username, password } = inputs;
-
-  function handleChange(input) {
+  let handleChange = input => {
     const { name, value } = input.target;
     setInputs(inputs => ({ ...inputs, [name]: value }));
-  }
+  };
 
-  function handleSubmit(e) {
+  let handleSubmit = e => {
     e.preventDefault();
+    const { username, password } = inputs;
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
-  }
+    props.updateLoginStatus();
+  };
 
   return (
     <div className="container">
@@ -29,20 +29,16 @@ export default function Login() {
             <input
               type="text"
               name="username"
-              value={username}
               onChange={handleChange}
               className="form-control"
             />
-            <br />
             <p> Password </p>
             <input
               type="password"
               name="password"
-              value={password}
               onChange={handleChange}
               className="form-control"
             />
-            <br />
             <input type="submit" className="btn" />
           </form>
         </div>

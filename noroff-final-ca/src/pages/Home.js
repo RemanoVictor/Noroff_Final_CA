@@ -4,7 +4,7 @@ import axios from "axios";
 import { MAGIC_API } from "../constants/constant";
 import Cards from "./../components/cards";
 
-export default function RickAndMorty() {
+export default function MagicTheGathering() {
   const [mtgcharacters, setmtgcharacters] = useState(undefined);
   const [filteredResults, setFilteredResults] = useState(undefined);
   const [searchPhrase, setsearchPhrase] = useState("");
@@ -12,7 +12,6 @@ export default function RickAndMorty() {
 
   useEffect(() => {
     axios.get(MAGIC_API).then(mtgData => {
-      console.log(mtgData);
       for (let i = mtgData.data.cards.length - 1; i >= 0; i--) {
         if (mtgData.data.cards[i].imageUrl === undefined) {
           mtgData.data.cards.splice(i, 1);
@@ -69,7 +68,7 @@ export default function RickAndMorty() {
                       key={index}
                       id={value.id}
                       name={value.name}
-                      img={`${value.imageUrl}`}
+                      img={value.imageUrl}
                       gender={value.gender}
                       species={value.species}
                       status={value.status}

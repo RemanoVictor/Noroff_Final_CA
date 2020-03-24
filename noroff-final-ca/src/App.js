@@ -7,19 +7,19 @@ import Nav from "./components/nav";
 import Login from "./pages/Login";
 
 export default function App(props) {
-  const [isloggedin, setisloggedin] = useState(true);
+  const [isloggedin, setisloggedin] = useState(false);
 
-  function updateLogin() {
+  const updateLogin = () => {
     setisloggedin(true);
-  }
+  };
 
-  function logOut() {
+  const logOut = () => {
     setisloggedin(false);
     localStorage.clear();
-  }
-
+  };
   return localStorage.getItem("username") === "cameron" &&
-    localStorage.getItem("password") === "done" ? (
+    localStorage.getItem("password") === "done" &&
+    isloggedin === true ? (
     <div className="App">
       <div className="[ container-fluid ]">
         <div className="[ row ] [ navigation ]">
