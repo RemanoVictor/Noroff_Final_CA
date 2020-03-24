@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { RICK_API } from "../constants/constant";
+import { MAGIC_API } from "../constants/constant";
 import Cards from "./../components/cards";
 
 export default function RickAndMorty() {
-  const [rmcharacters, setrmcharacters] = useState(undefined);
+  const [mtgcharacters, setmtgcharacters] = useState(undefined);
   const [filteredResults, setFilteredResults] = useState(undefined);
   const [searchPhrase, setsearchPhrase] = useState("");
   const [isResultsFiltered, setisResultsFiltered] = useState(false);
 
   useEffect(() => {
-    axios.get(RICK_API).then(rmData => {
-      setrmcharacters(rmData.data.results);
+    axios.get(MAGIC_API).then(mtgData => {
+      console.log(mtgData);
+      for (let i = mtgData.data.cards.length - 1; i >= 0; i--) {
+        if (mtgData.data.cards[i].imageUrl === undefined) {
+          mtgData.data.cards.splice(i, 1);
+        }
+      }
+      setmtgcharacters(mtgData.data.cards);
     });
   }, []);
 
   function handleFiltering(input) {
-    let filteredCards = rmcharacters.filter(value => {
+    let filteredCards = mtgcharacters.filter(value => {
       return value.name
         .toLowerCase()
         .includes(input.target.value.toLowerCase());
@@ -31,7 +37,7 @@ export default function RickAndMorty() {
       <div className="[ container-fluid ][ landingPage ]">
         <div className="[ row ]">
           <div className="[ col-sm-12 ]">
-            <h1 className="[ welcomeHeading ]">RICK AND MORTY</h1>
+            <h1 className="[ welcomeHeading ]">Magic The Gathering </h1>
           </div>
         </div>
       </div>
@@ -40,7 +46,7 @@ export default function RickAndMorty() {
         <div className="[ row ]">
           <div className="[ col-sm-12 ]">
             <form>
-              <p>Like, Pick a card Morty</p>
+              <p>You searched for {searchPhrase}</p>
               <input
                 type="text"
                 name="username"
@@ -63,7 +69,7 @@ export default function RickAndMorty() {
                       key={index}
                       id={value.id}
                       name={value.name}
-                      img={`${value.image}`}
+                      img={`${value.imageUrl}`}
                       gender={value.gender}
                       species={value.species}
                       status={value.status}
@@ -76,14 +82,14 @@ export default function RickAndMorty() {
             </div>
           ) : (
             <>
-              {rmcharacters !== undefined ? (
-                rmcharacters.map((value, index) => {
+              {mtgcharacters !== undefined ? (
+                mtgcharacters.map((value, index) => {
                   return (
                     <Cards
                       key={index}
                       id={value.id}
                       name={value.name}
-                      img={`${value.image}`}
+                      img={`${value.imageUrl}`}
                       gender={value.gender}
                       species={value.species}
                       status={value.status}

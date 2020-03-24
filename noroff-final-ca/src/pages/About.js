@@ -42,7 +42,7 @@ export default function About() {
                       eventKey="0"
                       className="toggle"
                     >
-                      Read More:
+                      Defeat Your Opponent:
                     </Accordion.Toggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="0">

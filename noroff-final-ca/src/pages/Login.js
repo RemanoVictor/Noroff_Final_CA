@@ -1,56 +1,53 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export default class Login extends Component {
-  state = {
+export default function Login() {
+  const [inputs, setInputs] = useState({
     username: "",
     password: ""
-  };
+  });
+  const { username, password } = inputs;
 
-  handleChange = input => {
-    let name = input.target.name;
-    let value = input.target.value;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    sessionStorage.setItem("username", this.state.username);
-    sessionStorage.setItem("password", this.state.password);
-    this.props.updateLoginStatus();
-  };
-
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="[ col-sm-4 ]"></div>
-          <div className="[ col-sm-4 ] [ login ]">
-            <h1> Login </h1>
-            <form onSubmit={this.handleSubmit}>
-              <p> Enter Username </p>
-              <input
-                type="text"
-                name="username"
-                onChange={this.handleChange}
-                className="form-control"
-              />
-              <br />
-              <p> Password </p>
-              <input
-                type="password"
-                name="password"
-                onChange={this.handleChange}
-                className="form-control"
-              />
-              <br />
-              <input type="submit" className="btn" />
-            </form>
-          </div>
-          <div className="[ col-sm-4 ]"></div>
-        </div>
-      </div>
-    );
+  function handleChange(input) {
+    const { name, value } = input.target;
+    setInputs(inputs => ({ ...inputs, [name]: value }));
   }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+  }
+
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="[ col-sm-4 ]"></div>
+        <div className="[ col-sm-4 ] [ login ]">
+          <h1> Login </h1>
+          <form onSubmit={handleSubmit}>
+            <p> Enter Username </p>
+            <input
+              type="text"
+              name="username"
+              value={username}
+              onChange={handleChange}
+              className="form-control"
+            />
+            <br />
+            <p> Password </p>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+              className="form-control"
+            />
+            <br />
+            <input type="submit" className="btn" />
+          </form>
+        </div>
+        <div className="[ col-sm-4 ]"></div>
+      </div>
+    </div>
+  );
 }
