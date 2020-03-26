@@ -1,9 +1,11 @@
 .login {
-    margin-top: 10%;
-    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 5%;
+    display: block;
     padding: 2%;
     border-radius: 5%;
-    border: 2px solid red;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(228, 225, 217, 1);
+    animation: pulse 2s infinite;
     text-align: center;
 
     & input {
@@ -11,14 +13,49 @@
     }
 
     h1 {
-        color: red;
+        color: rgb(62, 152, 226);
     }
 
+}
+
+.login:hover {
+    animation: none;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
 
 .loginTitle {
     text-align: center;
     margin-top: 5%;
     color: red;
-    stroke: whitesmoke;
+    text-shadow: 10px 20px 40px white;
 }

@@ -45,7 +45,7 @@ export default function MagicTheGathering() {
         <div className="[ row ]">
           <div className="[ col-sm-12 ]">
             <form>
-              <p>You searched for {searchPhrase}</p>
+              <p>Showing results for {searchPhrase}</p>
               <input
                 type="text"
                 name="username"

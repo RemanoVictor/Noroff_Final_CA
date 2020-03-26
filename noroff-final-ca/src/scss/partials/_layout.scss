@@ -21,8 +21,7 @@ body {
         font-family: 'Almendra SC',
             serif;
         font-size: 7em;
-        color: steelblue;
-        text-shadow: 10px 20px 40px white;
+        color: #8eaee6;
     }
 
     input {
@@ -30,8 +29,8 @@ body {
     }
 
     .navigation {
-        background-color: #a9d3e9;
-        border-bottom: 5px solid greenyellow;
+        background-color: #230031;
+        border-bottom: 5px solid rgb(62, 152, 226);
 
         .navbar-inverse {
             background-color: inherit;
@@ -41,7 +40,7 @@ body {
         button {
             background-color: transparent;
             border: 1px solid white;
-            // color: black;
+            color: #8eaee6;
             width: 50%;
             padding: 5px;
             border-radius: 5px;
@@ -53,7 +52,7 @@ body {
             li {
                 a {
                     margin-top: 5px;
-                    color: #314568;
+                    color: #8eaee6;
                     font-size: 1.5em;
 
 

@@ -1,5 +1,9 @@
 .about-content {
     background-color: rgba(000, 000, 000, 1);
+
+    p {
+        font-size: 1.5em;
+    }
 }
 
 .aboutWelcome {
@@ -8,6 +12,13 @@
 
 .toggle {
     width: 50%;
-    border: 1px solid white;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    background-color: rgb(59, 59, 214);
+    color: white;
+    margin: 2% 0;
+}
+
+.toggle:hover {
+    color: rgb(59, 59, 214);
+    background-color: white;
 }
