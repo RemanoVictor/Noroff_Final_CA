@@ -34,7 +34,9 @@ export default function Contact() {
   }
 
   function handleSubmit(event) {
-    alert(`Hey, Thanks for reaching out. We will get back to you ASAP!`);
+    alert(
+      `Hey ${name}, Thanks for reaching out. We will get back to you ASAP!`
+    );
     event.preventDefault();
   }
 

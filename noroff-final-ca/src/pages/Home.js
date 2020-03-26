@@ -71,7 +71,7 @@ export default function MagicTheGathering() {
                       img={value.imageUrl}
                       type={value.type}
                       number={value.number}
-                      Ruling={value.rulings[0].text}
+                      artist={value.artist}
                     />
                   );
                 })
