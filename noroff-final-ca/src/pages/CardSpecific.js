@@ -12,7 +12,6 @@ export default function CardSpecific() {
   let { id } = useParams();
   useEffect(() => {
     axios.get(MAGIC_API + id).then(mtgData => {
-      console.log(mtgData);
       setmtgCharacters(mtgData.data.card);
     });
   }, [id]);
@@ -25,11 +24,17 @@ export default function CardSpecific() {
             id={mtgcharacters.id}
             name={mtgcharacters.name}
             img={`${mtgcharacters.imageUrl}`}
-            // location={mtgcharacters.location.name}
-            // created={mtgcharacters.created}
+            colour={mtgcharacters.colors[0]}
+            rarity={mtgcharacters.rarity}
+            about={mtgcharacters.text}
           />
         ) : (
-          <div> No data </div>
+          <div>
+            <img
+              src="https://bloxy.info/assets/progress_horizontal-e1c9f4c66e06ad7aa169dc42e420abe6f097111e9d98cf35dfc162bb41ffffe1.gif"
+              alt="loading"
+            />
+          </div>
         )}
       </div>
     </div>

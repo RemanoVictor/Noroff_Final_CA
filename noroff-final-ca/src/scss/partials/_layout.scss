@@ -5,13 +5,12 @@
 }
 
 body {
-    background-image: url("https://media.giphy.com/media/MEcckyLh5uezDhvY3j/giphy.gif");
+    background-image: url("https://thumbs.gfycat.com/UncommonBlandFinwhale-size_restricted.gif");
     background-repeat: repeat-y;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     color: white;
-    font-family: 'Genghis khan', sans-serif;
 
     img {
         width: 100%;
@@ -19,14 +18,11 @@ body {
     }
 
     h1 {
-        font-family: 'get schwifty', sans-serif;
+        font-family: 'Almendra SC',
+            serif;
         font-size: 7em;
-        color: greenyellow;
+        color: steelblue;
         text-shadow: 10px 20px 40px white;
-    }
-
-    p {
-        font-size: 2em;
     }
 
     input {
@@ -72,7 +68,7 @@ body {
 }
 
 .card {
-    box-shadow: 0px 10px 20px 10px #ffffff;
+    box-shadow: 0px 5px 50px 0.5px #ffffff;
     margin: 15px;
     width: 30%;
     padding: 10px;

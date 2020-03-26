@@ -20,6 +20,13 @@ export default function Login(props) {
 
   return (
     <div className="container">
+      <div className="row loginTitle">
+        <div className="[ col-sm-1 ]"></div>
+        <div className="col-sm-10">
+          <h1> Magic The Gathering </h1>
+        </div>
+        <div className="[ col-sm-1 ]"></div>
+      </div>
       <div className="row">
         <div className="[ col-sm-4 ]"></div>
         <div className="[ col-sm-4 ] [ login ]">

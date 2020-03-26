@@ -69,9 +69,9 @@ export default function MagicTheGathering() {
                       id={value.id}
                       name={value.name}
                       img={value.imageUrl}
-                      gender={value.gender}
-                      species={value.species}
-                      status={value.status}
+                      type={value.type}
+                      number={value.number}
+                      Ruling={value.rulings[0].text}
                     />
                   );
                 })
@@ -88,15 +88,20 @@ export default function MagicTheGathering() {
                       key={index}
                       id={value.id}
                       name={value.name}
-                      img={`${value.imageUrl}`}
-                      gender={value.gender}
-                      species={value.species}
-                      status={value.status}
+                      img={value.imageUrl}
+                      type={value.type}
+                      number={value.number}
+                      artist={value.artist}
                     />
                   );
                 })
               ) : (
-                <div></div>
+                <div>
+                  <img
+                    src="https://bloxy.info/assets/progress_horizontal-e1c9f4c66e06ad7aa169dc42e420abe6f097111e9d98cf35dfc162bb41ffffe1.gif"
+                    alt="loading"
+                  />
+                </div>
               )}
             </>
           )}

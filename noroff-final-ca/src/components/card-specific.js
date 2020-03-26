@@ -5,8 +5,9 @@ const Cardspecific = props => {
     <div className="[ col-sm-8 ] [ card ]">
       <h3> Name: {props.name} </h3>
       <img src={props.img} alt="just random" className="[ CardImg ]" />
-      <p> Location: {props.location} </p>
-      <p>Created: {props.created}</p>
+      <p>Colour: {props.colour}</p>
+      <p>Rarity: {props.rarity}</p>
+      <p> About: {props.about}</p>
     </div>
   );
 };
