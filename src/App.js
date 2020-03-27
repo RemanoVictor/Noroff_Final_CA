@@ -17,8 +17,8 @@ export default function App(props) {
     setisloggedin(false);
     localStorage.clear();
   };
-  return localStorage.getItem("username") === "cameron" &&
-    localStorage.getItem("password") === "done" &&
+  return localStorage.getItem("username") === "Noroff" &&
+    localStorage.getItem("password") === "finalCA" &&
     isloggedin === true ? (
     <div className="App">
       <div className="[ container-fluid ]">
