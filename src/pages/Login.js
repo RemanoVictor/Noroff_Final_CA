@@ -3,14 +3,14 @@ import React, { useState } from "react";
 export default function Login(props) {
   const [inputs, setInputs] = useState({
     username: "",
-    password: ""
+    password: "",
   });
-  let handleChange = input => {
+  let handleChange = (input) => {
     const { name, value } = input.target;
-    setInputs(inputs => ({ ...inputs, [name]: value }));
+    setInputs((inputs) => ({ ...inputs, [name]: value }));
   };
 
-  let handleSubmit = e => {
+  let handleSubmit = (e) => {
     e.preventDefault();
     const { username, password } = inputs;
     localStorage.setItem("username", username);
@@ -38,6 +38,7 @@ export default function Login(props) {
               name="username"
               onChange={handleChange}
               className="form-control"
+              placeholder="Noroff"
             />
             <p> Password </p>
             <input
@@ -45,6 +46,7 @@ export default function Login(props) {
               name="password"
               onChange={handleChange}
               className="form-control"
+              placeholder="finalCA"
             />
             <input type="submit" className="btn" />
           </form>
